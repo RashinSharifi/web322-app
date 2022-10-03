@@ -1,5 +1,5 @@
 /***********************************************************************************************
- * BTI325-Assignment 2
+ * WEB322-Assignment 2
  * Ideclare that this assignment is my own work in accordance with Seneca Acdemic Policy.
  * No part of this assigment has been copied manually or electronically from any other source.
  * (including web sites)or distributed to other students.
@@ -19,7 +19,7 @@
  
 
  app.use(express.static('public'));
- // setup a 'route' to listen on the default url path
+ 
  app.get("/", (req, res) => {
      res.sendFile(__dirname + "/views/home.html");
  });
@@ -61,16 +61,11 @@ app.use((req, res) => {
     res.status(404).send("Page Not Found");
   });
 
-
-
 dataservice.initialize().then(function(){
 app.listen(HTTP_PORT);
 })
 .catch(function(){
     console.log("initialized failed");
     });
- // setup http server to listen on HTTP_PORT
-//  app.listen(HTTP_PORT);
-//  console.log("Express HTTP server listening on 8080");
 
  
